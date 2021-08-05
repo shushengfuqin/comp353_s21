@@ -28,11 +28,10 @@
       extract($row);
 
       $person_item = array(
-        'id' => $id,
+        'p_id' => $p_id,
         'first name' => $first_name,
         'last name' => $last_name,
         'date of birth' => $dob,
-        'medicare' => $medicare,
         'phone' => $phone,
         'address' => $address,
         'city' => $city,
