@@ -59,29 +59,17 @@ tr:nth-child(even) {
   if($num > 0) {
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
       extract($row);
-      // $person_item = array(
-      //   'p_id' => $p_id,
-      //   'first name' => $first_name,
-      //   'last name' => $last_name,
-      //   'date of birth' => $dob,
-      //   'phone' => $phone,
-      //   'address' => $address,
-      //   'city' => $city,
-      //   'province' => $province,
-      //   'postal code' => $postal_code,
-      //   'E-Mail' => $email
-      // );
       echo '<tr>';
-      echo '<td>'. $p_id .'<td/>';
-      echo '<td>'. $first_name .'<td/>';
-      echo '<td>'. $last_name .'<td/>';
-      echo '<td>'. $dob .'<td/>';
-      echo '<td>'. $phone .'<td/>';
-      echo '<td>'. $address .'<td/>';
-      echo '<td>'. $city .'<td/>';
-      echo '<td>'. $province .'<td/>';
-      echo '<td>'. $postal_code .'<td/>';
-      echo '<td>'. $email .'<td/>';
+      echo '<td>'. $p_id .'</td>';
+      echo '<td>'. $first_name .'</td>';
+      echo '<td>'. $last_name .'</td>';
+      echo '<td>'. $dob .'</td>';
+      echo '<td>'. $phone .'</td>';
+      echo '<td>'. $address .'</td>';
+      echo '<td>'. $city .'</td>';
+      echo '<td>'. $province .'</td>';
+      echo '<td>'. $postal_code .'</td>';
+      echo '<td>'. $email .'</td>';
       echo '</tr>';
     }
 
