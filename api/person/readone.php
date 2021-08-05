@@ -14,14 +14,14 @@
   $person = new Person($db);
 
   // Get ID
-  $person->id = isset($_GET['id']) ? $_GET['id'] : die();
+  $person->p_id = isset($_GET['p_id']) ? $_GET['p_id'] : die();
 
   // Get person
   $person->readone();
 
   // Create array
   $person_arr = array(
-    'id' => $person->id,
+    'p_id' => $person->p_id,
     'first name' => $person->first_name,
     'last name' => $person->last_name,
     'date of birth' => $person->dob,
