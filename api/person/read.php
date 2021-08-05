@@ -1,40 +1,29 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  /*width: 100%;*/
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
+  <link rel="stylesheet" href="../../includes/style.css">
 </head>
 <body>
 
-  <h1> Detailed Description of All Person </h1>
-  <table>
-    <tr> 
-      <th> Person ID </th>
-      <th> First Name </th>
-      <th> Last Name </th>
-      <th> Date of Birth </th>
-      <th> Phone# </th>
-      <th> Address </th>
-      <th> City </th>
-      <th> Province </th>
-      <th> Postal Code</th>
-      <th> email </th> 
-    </tr>
+<?php
+  include('../../includes/header.php');
+?>
+
+<!-- menu -->
+<div class="sidebar">
+  <a href="">Home</a>
+  <a href="#" class = "active">Person</a>
+  <a href="#">Public Health Worker</a>
+  <a href="#">Vaccination Type</a>
+  <a href="#">COVID-19 Variants</a>
+  <a href="#">Age Groups</a>
+  <a href="#">Set Group Age for Province</a>
+  <a href="#">Manage Vaccine Inventory</a>
+  <a href="#">Perform Vaccine</a>
+  <a href="#">Other Query</a>
+</div>
+
+<div class="main">
 <?php 
   // Headers
   header('Access-Control-Allow-Origin: *');
@@ -57,6 +46,21 @@ tr:nth-child(even) {
 
   // Check if any persons
   if($num > 0) {
+    echo '<h1> Detailed Description of All Persons </h1>';
+    echo '<table>';
+    echo '<tr>'; 
+    echo '<th> Person ID </th>';
+    echo '<th> First Name </th>';
+    echo '<th> Last Name </th>';
+    echo '<th> Date of Birth </th>';
+    echo '<th> Phone# </th>';
+    echo '<th> Address </th>';
+    echo '<th> City </th>';
+    echo '<th> Province </th>';
+    echo '<th> Postal Code</th>';
+    echo '<th> email </th>';
+    echo '</tr>';
+
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
       extract($row);
       echo '<tr>';
@@ -72,14 +76,14 @@ tr:nth-child(even) {
       echo '<td>'. $email .'</td>';
       echo '</tr>';
     }
+    echo '</table>';
 
   } 
   else {
-
+    echo "<h1 style='color:red'> Person table is currently empty. <h1>";
   }
 ?>
 
-  </table>
-
+</div>
 </body>
 </html>
