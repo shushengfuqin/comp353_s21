@@ -5,11 +5,10 @@
         private $table = 'person';
 
         //Person Properties
-        public $id;
+        public $p_id;
         public $first_name;
         public $last_name;
         public $dob;
-        public $medicare;
         public $phone;
         public $address;
         public $city;
@@ -39,13 +38,13 @@
         //get one person
         public function readone(){
             //create query
-            $query = 'SELECT * FROM ' . $this->table .' WHERE id = ? LIMIT 0,1';
+            $query = 'SELECT * FROM ' . $this->table .' WHERE p_id = ? LIMIT 0,1';
 
             // Prepare statement
             $stmt = $this->conn->prepare($query);
 
             // Bind ID
-            $stmt->bindParam(1, $this->id);
+            $stmt->bindParam(1, $this->p_id);
 
             // Execute query
             $stmt->execute();
