@@ -1,0 +1,1 @@
+INSERT INTO `person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('1', 'test1', 'test1', '2021-08-03', '5141111111', '1111', 'montreal', 'qc', '111111', '1111@1111.com');
