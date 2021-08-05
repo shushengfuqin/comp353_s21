@@ -15,16 +15,15 @@
   // Instantiate blog post object
   $person = new Person($db);
 
-    // Get raw posted data
-    $data = json_decode(file_get_contents("php://input"));
+  // Get raw posted data
+  $data = json_decode(file_get_contents("php://input"));
 
-    //Set ID to update
-    $person->id = $data->id;
+  //Set ID to update
+  $person->p_id = $data->p_id;
     
     $person->first_name = $data->first_name;
     $person->last_name = $data->last_name;
     $person->dob = $data->dob;
-    $person->medicare = $data->medicare;
     $person->phone = $data->phone;
     $person->address = $data->address;
     $person->city = $data->city;
