@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS person(
 	p_id INT AUTO_INCREMENT NOT NULL,
 	first_name VARCHAR(50),
     last_name VARCHAR(50),
-    dob DATE,
+    dob DATE DEFAULT CURRENT_DATE,
     phone CHAR(10),
     address VARCHAR(100),
     city VARCHAR(50),
