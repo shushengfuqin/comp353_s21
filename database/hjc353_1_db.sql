@@ -239,3 +239,98 @@ INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `v
 INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('102', '2', '3', '2021-03-01', '2', '100');
 INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('103', '3', '4', '2021-04-01', '2', '100');
 INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('104', '4', '1', '2021-05-01', '2', '100');
+
+
+DROP TRIGGER IF EXISTS `hjc353_1`.`shipment_BEFORE_INSERT`;
+
+DELIMITER $$
+USE `hjc353_1`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`shipment_BEFORE_INSERT` BEFORE INSERT ON `shipment` FOR EACH ROW
+BEGIN
+	
+	update inventory set inventory.quantity = inventory.quantity + new.quantity where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
+        
+
+END$$
+DELIMITER ;
+
+
+
+DROP TRIGGER IF EXISTS `hjc353_1`.`shipment_AFTER_DELETE`;
+
+DELIMITER $$
+USE `hjc353_1`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`shipment_AFTER_DELETE` AFTER DELETE ON `shipment` FOR EACH ROW
+BEGIN
+
+update inventory set inventory.quantity = inventory.quantity - old.quantity where (old.loc_id = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
+
+END$$
+DELIMITER ;
+
+
+
+
+
+
+DROP TRIGGER IF EXISTS `hjc353_1`.`transfer_BEFORE_INSERT`;
+
+DELIMITER $$
+USE `hjc353_1`$$
+CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `transfer_BEFORE_INSERT` BEFORE INSERT ON `transfer` FOR EACH ROW 
+BEGIN
+	
+	update inventory set inventory.quantity = inventory.quantity + new.quantity where (new.to_loc = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
+	update inventory set inventory.quantity = inventory.quantity - new.quantity where (new.from_loc = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
+	
+END$$
+DELIMITER ;
+
+
+
+
+DROP TRIGGER IF EXISTS `hjc353_1`.`transfer_AFTER_DELETE`;
+
+DELIMITER $$
+USE `hjc353_1`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`transfer_AFTER_DELETE` AFTER DELETE ON `transfer` FOR EACH ROW
+BEGIN
+	update inventory set inventory.quantity = inventory.quantity - old.quantity where (old.to_loc = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
+	update inventory set inventory.quantity = inventory.quantity + old.quantity where (old.from_loc = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
+END$$
+DELIMITER ;
+
+
+
+
+
+
+DROP TRIGGER IF EXISTS `hjc353_1`.`vaccination_BEFORE_INSERT`;
+
+DELIMITER $$
+USE `hjc353_1`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`vaccination_BEFORE_INSERT` BEFORE INSERT ON `vaccination` FOR EACH ROW
+BEGIN
+
+	update inventory set inventory.quantity = inventory.quantity - 1 where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
+
+END$$
+DELIMITER ;
+
+
+
+
+DROP TRIGGER IF EXISTS `hjc353_1`.`vaccination_AFTER_DELETE`;
+
+DELIMITER $$
+USE `hjc353_1`$$
+CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`vaccination_AFTER_DELETE` AFTER DELETE ON `vaccination` FOR EACH ROW
+BEGIN
+
+update inventory set inventory.quantity = inventory.quantity + 1 where (old.loc_id = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
+
+END$$
+DELIMITER ;
+
+
+
