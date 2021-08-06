@@ -21,6 +21,7 @@
   $person->p_id = $data->p_id;
   $person->first_name = $data->first_name;
   $person->last_name = $data->last_name;
+  $person->dob = $data->dob;
   $person->phone = $data->phone;
   $person->address = $data->address;
   $person->city = $data->city;

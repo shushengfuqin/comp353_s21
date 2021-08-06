@@ -88,41 +88,43 @@
         //create person
         public function create(){
                 //Create query
-          $query = 'INSERT INTO ' .
-          $this->table . ' 
-        SET
-          p_id = :p_id,
-          first_name = :first_name,
-          last_name = :last_name,
-          phone = :phone,
-          address = :address,
-          city = :city,
-          province = :province,
-          postal_code = :postal_code,
-          email = :email';
-      
-      //Prepare statement
-      $stmt = $this->conn->prepare($query);
+              $query = 'INSERT INTO ' .
+              $this->table . ' 
+            SET
+              p_id = :p_id,
+              first_name = :first_name,
+              last_name = :last_name,
+              dob = :dob,
+              phone = :phone,
+              address = :address,
+              city = :city,
+              province = :province,
+              postal_code = :postal_code,
+              email = :email';
+          
+          //Prepare statement
+          $stmt = $this->conn->prepare($query);
 
-      //Bind data 
-      $stmt->bindParam(":p_id", $this->p_id);
-      $stmt->bindParam(":first_name", $this->first_name);
-      $stmt->bindParam(":last_name", $this->last_name);
-      $stmt->bindParam(":phone", $this->phone);
-      $stmt->bindParam(":address", $this->address);
-      $stmt->bindParam(":city", $this->city);
-      $stmt->bindParam(":province", $this->province);
-      $stmt->bindParam(":postal_code", $this->postal_code);
-      $stmt->bindParam(":email", $this->email);
+          //Bind data 
+          $stmt->bindParam(":p_id", $this->p_id);
+          $stmt->bindParam(":first_name", $this->first_name);
+          $stmt->bindParam(":last_name", $this->last_name);
+          $stmt->bindParam(":dob", $this->dob);
+          $stmt->bindParam(":phone", $this->phone);
+          $stmt->bindParam(":address", $this->address);
+          $stmt->bindParam(":city", $this->city);
+          $stmt->bindParam(":province", $this->province);
+          $stmt->bindParam(":postal_code", $this->postal_code);
+          $stmt->bindParam(":email", $this->email);
 
-      //Execute query
-      if($stmt->execute()){
-        return true;
-      }
-      // Print error if something goes wrong
-      printf("Error: %s.\n", $stmt->error);
-      return false;
-            }
+          //Execute query
+          if($stmt->execute()){
+            return true;
+          }
+          // Print error if something goes wrong
+          printf("Error: %s.\n", $stmt->error);
+          return false;
+        }
         
         //update person 
         public function update(){
