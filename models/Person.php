@@ -15,6 +15,8 @@
         public $province;
         public $postal_code;
         public $email;
+        // added a infection history here
+        public $infection;
 
         //Constructor with DB
         public function __construct($db) {
@@ -61,6 +63,12 @@
             $this->province = $row['province'];
             $this->postal_code = $row['postal_code'];
             $this->email = $row['email'];
+
+            // create another query for infection history
+            $query = "SELECT * FROM infection WHERE p_id=? LIMIT 0,1"; 
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(1, $this->p_id);
+            $infection = $stmt->execute();
         }
 
         //create person 还有问题

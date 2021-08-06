@@ -14,7 +14,7 @@ body {
 .header {
   padding: 25px;
   text-align: center;
-  background: #1abc9c;
+  background: #1abcde;
   color: white;
   font-size: 20px;
 }
