@@ -1,23 +1,24 @@
 USE hjc353_1;
-INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('10001', 'John', 'Smith', '1980-12-01', '5142223333', '123 Hutchison Street', 'Montreal', 'QC', 'H2X2G7', 'john@gamil.com');
-INSERT INTO `hjc353_1`.`person` (`p_id`,`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('10002','Tom', 'Van De Camp', '1991-06-03', '5145225751', '1234 Saint-Catherine Street West', 'Montreal', 'QC', 'H1Y2L5', 'tom@gamil.com');
-INSERT INTO `hjc353_1`.`person` (`p_id`,`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('10003','Kelby', 'Matterdace', '1992-08-01', '4387772222', '124 Cruze', 'Toronto', 'ON', 'T4E2N2', 'kelby@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('10004', 'Jason', 'Young', '1954-01-01', '5142332222', '198 Avenue Dorval', 'Kirkland', 'QC', 'H3U6T1', 'jason@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('10005', 'Eve', 'Solis', '2000-01-09', '5142221111', '109 Taschereau Blvd', 'Saint John', 'NB', 'J4V7Y7', 'eve@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Zoe', 'Mason', '1979-08-21', '5142221341', '2001 Victoria Ave', 'Toronto', 'ON', 'J3S8H8', 'zoe@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Aron', 'Smith', '2000-10-11', '4367213333', '2101 Rue Notre-Dame', 'Halifax', 'NS', 'P9W9U9', 'aron@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Tom', 'Huber', '1976-10-12', '4357289090', '2000 Boulevard Leduc', 'Ottawa', 'ON', 'J3H2H3', 'tomh@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Ken', 'Matter', '2001-10-23', '4372895333', '5033 Av Monami', 'Vancouver', 'BC', 'J4D2N2', 'ken@hotmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Eric', 'Sam', '1967-08-09', '4362252233', '124 Sherbrooke Street', 'Edmonton', 'AB', 'H2Y3J3', 'eric@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Maria', 'Scavo', '1953-03-19', '4509834444', '333 Avenue DDO', 'Charlottetown', 'PE', 'K2P1N1', 'maria@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Wu', 'Kris', '1999-02-09', '4508989888', '345 Du Midway', 'Fredericton', 'NB', 'L9I2M2', 'kris@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Da', 'Lian', '2002-03-08', '4364545222', '465 Yellow street', 'Winnipeg', 'MB', 'F4D4B4', 'lian@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Prince', 'Joe', '2001-09-12', '4376223333', '6789 Regina street', 'Victoria', 'BC', 'H2H2B2', 'prince@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Yuk', 'Zoe', '1980-03-07', '5124632444', '3522 White street', 'Whitehorse', 'YT', 'J3H4M4', 'white@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Mark', 'John', '1987-12-12', '4514232234', '789 Blvd victoria', 'lqaluit', 'NU', 'L7J3J3', 'john@hotmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Lin', 'Jerry', '1997-09-12', '4573321111', '972 Blvd saskatoon', 'Yellowknife', 'NT', 'K4G2H2', 'jerry@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Universe', 'Toko', '1998-10-12', '4365998777', '986 Henri street', 'Regina', 'SK', 'L3O4B4', 'toko@gmail.com');
-INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`) VALUES ('Frank', 'Fisher', '2001-10-13', '4352228888', '234 Bourassa street', 'St.John\'s', 'NL', 'J4H3B3', 'fisher@gmail.com');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10001', 'John', 'Smith', '1980-12-01', '5142223333', '123 Hutchison Street', 'Montreal', 'QC', 'H2X2G7', 'john@gamil.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`,`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10002','Tom', 'Van De Camp', '1991-06-03', '5145225751', '1234 Saint-Catherine Street West', 'Montreal', 'QC', 'H1Y2L5', 'tom@gamil.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`,`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10003','Kelby', 'Matterdace', '1992-08-01', '4387772222', '124 Cruze', 'Toronto', 'ON', 'T4E2N2', 'kelby@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10004', 'Jason', 'Young', '1954-01-01', '5142332222', '198 Avenue Dorval', 'Kirkland', 'QC', 'H3U6T1', 'jason@gmail.com', 'China');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10005', 'Eve', 'Solis', '2000-01-09', '5142221111', '109 Taschereau Blvd', 'Saint John', 'NB', 'J4V7Y7', 'eve@gmail.com', 'France');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Zoe', 'Mason', '1979-08-21', '5142221341', '2001 Victoria Ave', 'Toronto', 'ON', 'J3S8H8', 'zoe@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Aron', 'Smith', '2000-10-11', '4367213333', '2101 Rue Notre-Dame', 'Halifax', 'NS', 'P9W9U9', 'aron@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Tom', 'Huber', '1976-10-12', '4357289090', '2000 Boulevard Leduc', 'Ottawa', 'ON', 'J3H2H3', 'tomh@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Ken', 'Matter', '2001-10-23', '4372895333', '5033 Av Monami', 'Vancouver', 'BC', 'J4D2N2', 'ken@hotmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Eric', 'Sam', '1967-08-09', '4362252233', '124 Sherbrooke Street', 'Edmonton', 'AB', 'H2Y3J3', 'eric@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Maria', 'Scavo', '1953-03-19', '4509834444', '333 Avenue DDO', 'Charlottetown', 'PE', 'K2P1N1', 'maria@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Wu', 'Kris', '1999-02-09', '4508989888', '345 Du Midway', 'Fredericton', 'NB', 'L9I2M2', 'kris@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Da', 'Lian', '2002-03-08', '4364545222', '465 Yellow street', 'Winnipeg', 'MB', 'F4D4B4', 'lian@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Prince', 'Joe', '2001-09-12', '4376223333', '6789 Regina street', 'Victoria', 'BC', 'H2H2B2', 'prince@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Yuk', 'Zoe', '1980-03-07', '5124632444', '3522 White street', 'Whitehorse', 'YT', 'J3H4M4', 'white@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Mark', 'John', '1987-12-12', '4514232234', '789 Blvd victoria', 'lqaluit', 'NU', 'L7J3J3', 'john@hotmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Lin', 'Jerry', '1997-09-12', '4573321111', '972 Blvd saskatoon', 'Yellowknife', 'NT', 'K4G2H2', 'jerry@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Universe', 'Toko', '1958-10-12', '4365998777', '986 Henri street', 'Regina', 'SK', 'L3O4B4', 'toko@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Frank', 'Fisher', '2001-10-13', '4352228888', '234 Bourassa street', 'St.John\'s', 'NL', 'J4H3B3', 'fisher@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10020', 'Daniel', 'Tony', '1985-02-03', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H3J2B3', 'tonyd@gmail.com', 'Canada');
 
 
 
@@ -40,6 +41,7 @@ INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10016', '3
 INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10017', '343222568', 'GHJK34527878');
 INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10018', '345786111', 'QSAZ90901212');
 INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10019', '334543777', 'PJHG38291234');
+INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10020', '333676799', 'UJHG39201023');
 
 
 
@@ -56,6 +58,8 @@ INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10013', '1006
 INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10014', '1007');
 INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10015', '1008');
 INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10017', '1009');
+INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10020', '1010');
+
 
 
 INSERT INTO `hjc353_1`.`age_group` (`grp_id`, `upper_limit`, `lower_limit`) VALUES ('1', '200', '80');
@@ -131,6 +135,7 @@ INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES 
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`,`end_date`) VALUES ('1005', '1', '2020-07-12','2020-09-29');
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1005', '1', '2020-12-10');
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1009', '5', '2021-01-22');
+INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1010', '2', '2021-01-19');
 
 
 INSERT INTO `hjc353_1`.`vaccine` (`vac_id`, `name`, `vac_desc`, `status`) VALUES ('1', 'Pfizer-BioNTech', 'mRNA', 'safe');
@@ -177,6 +182,10 @@ UPDATE `hjc353_1`.`inventory` SET `quantity` = '200' WHERE (`loc_id` = '4') and 
 UPDATE `hjc353_1`.`inventory` SET `quantity` = '300' WHERE (`loc_id` = '4') and (`vac_id` = '2');
 UPDATE `hjc353_1`.`inventory` SET `quantity` = '90' WHERE (`loc_id` = '4') and (`vac_id` = '3');
 UPDATE `hjc353_1`.`inventory` SET `quantity` = '100' WHERE (`loc_id` = '4') and (`vac_id` = '4');
+INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`, `quantity`) VALUES ('5', '1', '100');
+INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`, `quantity`) VALUES ('5', '2', '500');
+INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`, `quantity`) VALUES ('5', '3', '100');
+INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`, `quantity`) VALUES ('5', '4', '200');
 
 
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10001', '1', '1005', '1', '1', '2021-02-28');
@@ -187,7 +196,7 @@ INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `l
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10004', '2', '1006', '4', '2', '2021-04-05');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10006', '1', '1004', '1', '3', '2021-03-18');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10008', '1', '1004', '2', '3', '2021-05-01');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10008', '2', '1007', '1', '3', '2021-07-11');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10008', '2', '1007', '1', '3', '2021-07-30');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10009', '1', '1008', '2', '4', '2021-03-28');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10010', '1', '1009', '1', '5', '2021-02-05');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10010', '2', '1009', '1', '5', '2021-05-06');
@@ -195,5 +204,38 @@ INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `l
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10018', '1', '1006', '1', '2', '2021-05-20');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10017', '1', '1002', '2', '2', '2021-03-23');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10016', '1', '1003', '1', '2', '2021-04-22');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10016', '2', '1002', '2', '2', '2021-07-19');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10016', '2', '1002', '2', '2', '2021-07-29');
 
+
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('101', '1', '2020-12-30', '1', '50');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('102', '1', '2021-01-02', '1', '50');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('103', '1', '2021-02-04', '2', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('104', '1', '2021-07-03', '2', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('105', '1', '2021-02-03', '3', '200');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('106', '1', '2021-04-01', '4', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('107', '2', '2020-12-27', '1', '300');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('108', '2', '2021-02-01', '2', '200');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('109', '2', '2021-03-01', '2', '200');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('110', '2', '2021-01-14', '3', '500');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('111', '2', '2021-07-29', '4', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('112', '3', '2020-12-29', '1', '400');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('113', '3', '2021-02-09', '1', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('114', '3', '2021-01-01', '2', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('115', '3', '2021-03-01', '2', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('116', '3', '2021-01-08', '3', '300');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('117', '3', '2021-05-01', '4', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('118', '4', '2021-03-12', '1', '200');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('119', '4', '2020-12-30', '2', '300');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('120', '4', '2021-01-05', '3', '90');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('121', '4', '2021-04-19', '4', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('122', '5', '2021-05-09', '1', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('123', '5', '2021-03-18', '2', '300');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('124', '5', '2021-04-08', '2', '200');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('125', '5', '2021-03-17', '3', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('126', '5', '2021-08-01', '4', '200');
+
+
+INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('101', '1', '2', '2021-02-10', '2', '100');
+INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('102', '2', '3', '2021-03-01', '2', '100');
+INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('103', '3', '4', '2021-04-01', '2', '100');
+INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('104', '4', '1', '2021-05-01', '2', '100');
