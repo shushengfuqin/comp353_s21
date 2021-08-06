@@ -13,7 +13,7 @@
 <!-- menu -->
 <div class="sidebar">
   <a href="../../index.php">Home</a>
-  <a href="#">Person</a>
+  <a href="read.php">Person</a>
   <a href="#">Public Health Worker</a>
   <a href="#">Public Health Facility</a>
   <a href="#">Vaccination Type</a>
@@ -81,7 +81,7 @@
     echo "<input type='submit' value='Check'>";
     echo "</form>";
     echo "</div>";
-    // ************ end of reading one person ************
+    // ************ end of requesting one person ************
 
 
     // button to add a new person

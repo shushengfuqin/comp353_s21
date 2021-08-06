@@ -1,7 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="../../includes/style.css">
+  <title>Person Information</title>
+</head>
+<body>
+
+<?php
+  include('../../includes/header.php');
+?>
+
+<!-- menu -->
+<div class="sidebar">
+  <a href="../../index.php">Home</a>
+  <a href="read.php">Person</a>
+  <a href="#">Public Health Worker</a>
+  <a href="#">Public Health Facility</a>
+  <a href="#">Vaccination Type</a>
+  <a href="#">COVID-19 Variants</a>
+  <a href="#">Age Groups</a>
+  <a href="#">Manage Province</a>
+  <a href="#">Manage Vaccine Inventory</a>
+  <a href="#">Perform Vaccine</a>
+  <a href="#">Other Query</a>
+</div>
+
+<div class="main">
 <?php 
   // Headers
   header('Access-Control-Allow-Origin: *');
-  header('Content-Type: application/json');
+  // header('Content-Type: application/json');
 
   include_once '../../config/Database.php';
   include_once '../../models/Person.php';
@@ -19,19 +47,61 @@
   // Get person
   $person->readone();
 
-  // Create array
-  $person_arr = array(
-    'p_id' => $person->p_id,
-    'first name' => $person->first_name,
-    'last name' => $person->last_name,
-    'date of birth' => $person->dob,
-    'phone' => $person->phone,
-    'address' => $person->address,
-    'city' => $person->city,
-    'province' => $person->province,
-    'postal_code' => $person->postal_code ,
-    'email' => $person->email
-  );
+  echo '<h2> Personal Information </h2>';
+  echo '<table>';
+  echo '<tr>'; 
+  echo '<th> Person ID </th>';
+  echo '<th> First Name </th>';
+  echo '<th> Last Name </th>';
+  echo '<th> Date of Birth </th>';
+  echo '<th> Phone# </th>';
+  echo '<th> Address </th>';
+  echo '<th> City </th>';
+  echo '<th> Province </th>';
+  echo '<th> Postal Code</th>';
+  echo '<th> email </th>';
+  echo '</tr>';
 
-  // Make JSON
-  print_r(json_encode($person_arr));
+  echo '<tr>';
+  echo '<td>'. $person->p_id .'</td>';
+  echo '<td>'. $person->first_name .'</td>';
+  echo '<td>'. $person->last_name .'</td>';
+  echo '<td>'. $person->dob .'</td>';
+  echo '<td>'. $person->phone .'</td>';
+  echo '<td>'. $person->address .'</td>';
+  echo '<td>'. $person->city .'</td>';
+  echo '<td>'. $person->province .'</td>';
+  echo '<td>'. $person->postal_code .'</td>';
+  echo '<td>'. $person->email .'</td> </tr>';
+  echo '</table>';
+
+  $person->get_infection();
+  echo '<h2> Infection History </h2>';
+  if(count($person->infection) > 0){
+    echo "<table> <tr>";
+    echo "<th> Date </th>";
+    echo "<th> Variant Type </th>";
+    echo "</tr>";
+
+    foreach($person->infection as $inf){
+      echo "<tr>";
+      echo "<td>". $inf['idate'] ."</td>";
+      echo "<td>". $inf['type'] ."</td>";
+      echo "</tr>";
+    }
+    echo "</table>";
+
+  }
+  else{
+    echo "<h3 style='color:red'> The selected person has not been infected. </h3>";
+  }
+
+?>
+
+<form>
+ <input type="button" value="Back" onclick="history.go(-1)">
+</form>
+
+</div>
+</body>
+</html>

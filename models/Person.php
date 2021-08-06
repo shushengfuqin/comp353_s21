@@ -18,6 +18,7 @@
         // added a infection history here
         public $infection;
 
+
         //Constructor with DB
         public function __construct($db) {
             $this->conn = $db;
@@ -35,6 +36,24 @@
             $stmt->execute();
 
             return $stmt;
+        }
+
+        // function for get infection history
+        public function get_infection(){
+            // create query for infection history
+            $query = "SELECT idate, variant_name FROM infection JOIN variant_type ON (type=variant_id) WHERE p_id=?"; 
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(1, $this->p_id);
+            $stmt->execute();
+
+            $this->infection = array();
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $item = array(
+                    'idate' => $row['idate'],
+                    'type' => $row['variant_name']
+                );
+                array_push($this->infection, $item);
+            }
         }
 
         //get one person
@@ -63,13 +82,7 @@
           $this->province = $row['province'];
           $this->postal_code = $row['postal_code'];
           $this->email = $row['email'];
-            // create another query for infection history 回头 做个 单独function
-            /*
-            $query = "SELECT * FROM infection WHERE p_id=? LIMIT 0,1"; 
-            $stmt = $this->conn->prepare($query);
-            $stmt->bindParam(1, $this->p_id);
-            $infection = $stmt->execute();
-            */
+
         }
 
         //create person
