@@ -325,7 +325,19 @@ USE `hjc353_1`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`vaccination_BEFORE_INSERT` BEFORE INSERT ON `vaccination` FOR EACH ROW
 BEGIN
 
-	update inventory set inventory.quantity = inventory.quantity - 1 where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
+	if exists(SELECT ag.grp_id 
+			FROM pv_age pv, facility f, person p, age_group ag
+			WHERE  new.loc_id = f.loc_id  AND pv.province = f.province AND p.p_id = new.p_id 
+				AND (TRUNCATE(DATEDIFF(CURDATE(), p.dob) / 365, 0) BETWEEN ag.lower_limit AND ag.upper_limit) AND ag.grp_id > pv.grp_id)then
+		set new.p_id = NULL;
+		set new.dose_num = NULL;
+		set new.emp_id = NULL;
+		set new.vac_id = NULL;
+		set new.loc_id = NULL;
+		set new.vdate = NULL;
+	else
+		update inventory set inventory.quantity = inventory.quantity - 1 where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
+	end if;
 
 END$$
 DELIMITER ;
