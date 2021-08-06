@@ -40,29 +40,29 @@
         //get one person
         public function readone(){
             //create query
-      $query = 'SELECT * FROM ' . $this->table .' WHERE p_id = ? LIMIT 0,1';
+          $query = 'SELECT * FROM ' . $this->table .' WHERE p_id = ? LIMIT 0,1';
 
-      // Prepare statement
-      $stmt = $this->conn->prepare($query);
+          // Prepare statement
+          $stmt = $this->conn->prepare($query);
 
-      // Bind ID
-      $stmt->bindParam(1, $this->p_id);
+          // Bind ID
+          $stmt->bindParam(1, $this->p_id);
 
-      // Execute query
-      $stmt->execute();
+          // Execute query
+          $stmt->execute();
 
-      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+          $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-      // Set properties
-      $this->first_name = $row['first_name'];
-      $this->last_name = $row['last_name'];
-      $this->dob = $row['dob'];
-      $this->phone = $row['phone'];
-      $this->address = $row['address'];
-      $this->city = $row['city'];
-      $this->province = $row['province'];
-      $this->postal_code = $row['postal_code'];
-      $this->email = $row['email'];
+          // Set properties
+          $this->first_name = $row['first_name'];
+          $this->last_name = $row['last_name'];
+          $this->dob = $row['dob'];
+          $this->phone = $row['phone'];
+          $this->address = $row['address'];
+          $this->city = $row['city'];
+          $this->province = $row['province'];
+          $this->postal_code = $row['postal_code'];
+          $this->email = $row['email'];
             // create another query for infection history 回头 做个 单独function
             /*
             $query = "SELECT * FROM infection WHERE p_id=? LIMIT 0,1"; 
