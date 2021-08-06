@@ -280,8 +280,21 @@ USE `hjc353_1`$$
 CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `transfer_BEFORE_INSERT` BEFORE INSERT ON `transfer` FOR EACH ROW 
 BEGIN
 	
+	IF EXISTS(SELECT i.quantity FROM inventory i WHERE i.loc_id = new.from_loc AND i.vac_id = new.vac_id AND i.quantity > new.quantity)THEN
+    
+	
 	update inventory set inventory.quantity = inventory.quantity + new.quantity where (new.to_loc = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
 	update inventory set inventory.quantity = inventory.quantity - new.quantity where (new.from_loc = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
+    
+    else
+    set new.trans_id = NULL;
+    set new.from_loc = NULL;
+    set new.to_loc = NULL;
+    set new.tdate = NULL;
+    set new.vac_id = NULL;
+    set new.quantity= NULL;
+
+    end if;
 	
 END$$
 DELIMITER ;
