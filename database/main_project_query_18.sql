@@ -1,5 +1,5 @@
 USE hjc353_1;
-SELECT f.loc_id, f.name, f.address, f.type, f.phone, emp.total_emp, s.total_shipment, t.total_from_loc, tt.total_to_loc, i.total_vaccine, p.total_people, v.total_dose
+SELECT f.loc_id, f.name, f.address, f.type, f.phone, emp.total_emp, s.total_shipment, t.total_from_loc, tt.total_to_loc, i.Pfizer_Moderna_AZ_Johnson, p.total_people, v.total_dose
 FROM facility f
 LEFT JOIN (SELECT wh.loc_id, COUNT(wh.emp_id)AS total_emp
 		FROM  work_history wh
@@ -14,7 +14,7 @@ LEFT JOIN (SELECT t1.from_loc, SUM(t1.quantity)AS total_from_loc
 LEFT JOIN (SELECT t2.to_loc, SUM(t2.quantity)AS total_to_loc
 		FROM transfer t2 
 		GROUP BY t2.to_loc)AS tt ON tt.to_loc = f.loc_id
-LEFT JOIN (SELECT inv.loc_id,SUM(inv.quantity)AS total_vaccine
+LEFT JOIN (SELECT inv.loc_id,GROUP_CONCAT(inv.quantity)AS Pfizer_Moderna_AZ_Johnson
 		FROM inventory inv
 		GROUP BY inv.loc_id) AS i ON i.loc_id = f.loc_id
 LEFT JOIN (SELECT peop.loc_id, COUNT(peop.p_id)AS total_people
