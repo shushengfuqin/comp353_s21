@@ -37,6 +37,15 @@
             return $stmt;
         }
 
+        // function for get infection history
+        public function get_infection(){
+            // create query for infection history
+            $query = "SELECT * FROM infection WHERE p_id=? LIMIT 0,1"; 
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(1, $this->p_id);
+            $infection = $stmt->execute();
+        }
+
         //get one person
         public function readone(){
             //create query
@@ -63,13 +72,6 @@
           $this->province = $row['province'];
           $this->postal_code = $row['postal_code'];
           $this->email = $row['email'];
-            // create another query for infection history 回头 做个 单独function
-            /*
-            $query = "SELECT * FROM infection WHERE p_id=? LIMIT 0,1"; 
-            $stmt = $this->conn->prepare($query);
-            $stmt->bindParam(1, $this->p_id);
-            $infection = $stmt->execute();
-            */
         }
 
         //create person 还有问题
