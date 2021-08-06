@@ -14,14 +14,15 @@
   $person = new Person($db);
 
   // Get ID
-  $person->p_id = isset($_GET['p_id']) ? $_GET['p_id'] : die();
+  // $person->id = isset($_GET['id']) ? $_GET['id'] : die();
+  $person->id = '1';
 
   // Get person
   $person->readone();
 
-  // Create array
+  // need to add vaccine history here.
   $person_arr = array(
-    'p_id' => $person->p_id,
+    'id' => $person->p_id,
     'first name' => $person->first_name,
     'last name' => $person->last_name,
     'date of birth' => $person->dob,
@@ -32,6 +33,8 @@
     'postal_code' => $person->postal_code ,
     'email' => $person->email
   );
+
+
 
   // Make JSON
   print_r(json_encode($person_arr));

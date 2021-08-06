@@ -1,40 +1,31 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  /*width: 100%;*/
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
+  <link rel="stylesheet" href="../../includes/style.css">
+  <title>Manage Person</title>
 </head>
 <body>
 
-  <h1> Detailed Description of All Person </h1>
-  <table>
-    <tr> 
-      <th> Person ID </th>
-      <th> First Name </th>
-      <th> Last Name </th>
-      <th> Date of Birth </th>
-      <th> Phone# </th>
-      <th> Address </th>
-      <th> City </th>
-      <th> Province </th>
-      <th> Postal Code</th>
-      <th> email </th> 
-    </tr>
+<?php
+  include('../../includes/header.php');
+?>
+
+<!-- menu -->
+<div class="sidebar">
+  <a href="../../index.php">Home</a>
+  <a href="#">Person</a>
+  <a href="#">Public Health Worker</a>
+  <a href="#">Public Health Facility</a>
+  <a href="#">Vaccination Type</a>
+  <a href="#">COVID-19 Variants</a>
+  <a href="#">Age Groups</a>
+  <a href="#">Manage Province</a>
+  <a href="#">Manage Vaccine Inventory</a>
+  <a href="#">Perform Vaccine</a>
+  <a href="#">Other Query</a>
+</div>
+
+<div class="main">
 <?php 
   // Headers
   header('Access-Control-Allow-Origin: *');
@@ -57,41 +48,96 @@ tr:nth-child(even) {
 
   // Check if any persons
   if($num > 0) {
+
+    // store the result in an array
+    $person_arr = array();
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
       extract($row);
-      // $person_item = array(
-      //   'p_id' => $p_id,
-      //   'first name' => $first_name,
-      //   'last name' => $last_name,
-      //   'date of birth' => $dob,
-      //   'phone' => $phone,
-      //   'address' => $address,
-      //   'city' => $city,
-      //   'province' => $province,
-      //   'postal code' => $postal_code,
-      //   'E-Mail' => $email
-      // );
+
+      $person_item = array(
+        'p_id' => $p_id,
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+        'dob' => $dob,
+        'phone' => $phone,
+        'address' => $address,
+        'city' => $city,
+        'province' => $province,
+        'postal_code' => $postal_code,
+        'email' => $email
+      );
+      array_push($person_arr, $person_item);
+    }
+
+    // this section is to select one person and get the detailed information (including infection history) for that person
+    echo "<div class='box'>";
+    echo "<form method='get' action='readone.php'>";
+    echo "<h2> Select a person ID to get detailed information (including infection history) of that person </h2>";
+    echo "<select name='p_id'>";
+    foreach($person_arr as $person){
+      echo "<option value=". $person['p_id'] .">" . $person['p_id']. "</option>";
+    }
+    echo "</option>";
+    echo "<input type='submit' value='Check'>";
+    echo "</form>";
+    echo "</div>";
+    // ************ end of reading one person ************
+
+
+    // button to add a new person
+    echo "<h1 style='display: inline-block margin: 0'> All Persons Information <a href='create.php'> <button class='header-button'> + Add New Person </button> </a> </h1>";
+
+    // begin listing all persons
+    echo '<table>';
+    echo '<tr>'; 
+    echo '<th> Person ID </th>';
+    echo '<th> First Name </th>';
+    echo '<th> Last Name </th>';
+    echo '<th> Date of Birth </th>';
+    // echo '<th> Phone# </th>';
+    echo '<th> Address </th>';
+    echo '<th> City </th>';
+    echo '<th> Province </th>';
+    // echo '<th> Postal Code</th>';
+    // echo '<th> email </th>';
+    echo '<th> Edit </th>';
+    echo '<th> Delete </th>';
+    echo '</tr>';
+
+    foreach($person_arr as $person) {
       echo '<tr>';
-      echo '<td>'. $p_id .'<td/>';
-      echo '<td>'. $first_name .'<td/>';
-      echo '<td>'. $last_name .'<td/>';
-      echo '<td>'. $dob .'<td/>';
-      echo '<td>'. $phone .'<td/>';
-      echo '<td>'. $address .'<td/>';
-      echo '<td>'. $city .'<td/>';
-      echo '<td>'. $province .'<td/>';
-      echo '<td>'. $postal_code .'<td/>';
-      echo '<td>'. $email .'<td/>';
+      echo '<td>'. $person['p_id'] .'</td>';
+      echo '<td>'. $person['first_name'] .'</td>';
+      echo '<td>'. $person['last_name'] .'</td>';
+      echo '<td>'. $person['dob'] .'</td>';
+      // echo '<td>'. $person['phone'] .'</td>';
+      echo '<td>'. $person['address'] .'</td>';
+      echo '<td>'. $person['city'] .'</td>';
+      echo '<td>'. $person['province'] .'</td>';
+      // echo '<td>'. $person['postal_code'] .'</td>';
+      // echo '<td>'. $person['email'] .'</td>';
+
+      /* delete and edit button for the person - requires two separate forms */
+      echo "<td>";
+      echo "<form method='get' action='update.php'>";
+      echo "<button type='submit' name='edit' value='". $person['p_id'] ."'> Edit</button>";
+      echo "</form> </td>";
+
+      echo "<td>";
+      echo "<form method='get' action='delete.php'>";
+      echo "<button type='submit' name='delete' value='". $person['p_id'] ."'> Delete</button>";
+      echo "</form> </td>";
       echo '</tr>';
     }
 
+    echo '</table>';
+
   } 
   else {
-
+    echo "<h1 style='color:red'> Person table is currently empty. <h1>";
   }
 ?>
 
-  </table>
-
+</div>
 </body>
 </html>
