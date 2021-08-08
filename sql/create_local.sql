@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS facility(
     postal_code CHAR(6),
     phone CHAR(10),
     web VARCHAR(100),
-    type VARCHAR(20),
+    type ENUM('Hospital','Clinic','special installment'),
     manager INT UNIQUE,
     PRIMARY KEY(loc_id),
     FOREIGN KEY(manager) REFERENCES citizen(p_id),
