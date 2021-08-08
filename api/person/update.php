@@ -1,8 +1,9 @@
+
 <?php 
   // Headers
   header('Access-Control-Allow-Origin: *');
-  header('Content-Type: application/json');
-  header('Access-Control-Allow-Methods: PUT');
+  // header('Content-Type: application/json');
+  header('Access-Control-Allow-Methods: POST');
   header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
   include_once '../../config/Database.php';
@@ -15,29 +16,28 @@
   // Instantiate blog post object
   $person = new Person($db);
 
-  // Get raw posted data
-  $data = json_decode(file_get_contents("php://input"));
-
   //Set ID to update
-  $person->p_id = $data->p_id;
+  $person->p_id = $_POST['p_id'];
     
-    $person->first_name = $data->first_name;
-    $person->last_name = $data->last_name;
-    $person->dob = $data->dob;
-    $person->phone = $data->phone;
-    $person->address = $data->address;
-    $person->city = $data->city;
-    $person->province = $data->province;
-    $person->postal_code = $data->postal_code;
-    $person->email = $data->email;
+    $person->first_name = $_POST['first_name'];
+    $person->last_name = $_POST['last_name'];
+    $person->dob = $_POST['dob'];
+    $person->phone = $_POST['phone'];
+    $person->address = $_POST['address'];
+    $person->city = $_POST['city'];
+    $person->province = $_POST['province'];
+    $person->postal_code = $_POST['postal_code'];
+    $person->email = $_POST['email'];
+    $person->citizenship = $_POST['citizenship'];
   
     // Update post
     if($person->update()) {
-      echo json_encode(
-        array('message' => 'Person Updated')
-      );
+      header("Location: read.php");
     } else {
-      echo json_encode(
-        array('message' => 'Person Not Updated')
-      );
+      echo "fail";
     }
+?>
+
+</div>
+</body>
+</html>

@@ -35,7 +35,7 @@
     // echo json_encode(
     //   array('message' => 'Post Created')
     // );
-    header("read.php");
+    header("Location: read.php");
   } else {
     // echo json_encode(
     //   array('message' => 'Post Not Created')
