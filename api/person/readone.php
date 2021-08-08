@@ -74,7 +74,7 @@
   echo '<td>'. $person->province .'</td>';
   echo '<td>'. $person->postal_code .'</td>';
   echo '<td>'. $person->email .'</td>';
-  echo '<td>'. $person->citizen .'</td> </tr>';
+  echo '<td>'. $person->citizenship .'</td> </tr>';
   echo '</table>';
 
   $person->get_infection();

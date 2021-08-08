@@ -83,7 +83,7 @@
           $this->province = $row['province'];
           $this->postal_code = $row['postal_code'];
           $this->email = $row['email'];
-          $this->citizen = $row['citizenship'];
+          $this->citizenship = $row['citizenship'];
 
         }
 
@@ -146,7 +146,8 @@
           city = :city,
           province = :province,
           postal_code = :postal_code,
-          email = :email
+          email = :email,
+          citizenship = :citizenship
           WHERE p_id = :p_id';
   
   //Prepare statement
@@ -162,6 +163,7 @@
           $stmt->bindParam(":province", $this->province);
           $stmt->bindParam(":postal_code", $this->postal_code);
           $stmt->bindParam(":email", $this->email);
+          $stmt->bindParam(":citizenship", $this->citizenship);
           $stmt->bindParam(":p_id", $this->p_id);
           
           //Execute query

@@ -119,7 +119,7 @@
 
       /* delete and edit button for the person - requires two separate forms */
       echo "<td>";
-      echo "<form method='get' action='update.php'>";
+      echo "<form method='get' action='update_UI.php'>";
       echo "<button type='submit' name='edit' value='". $person['p_id'] ."'> Edit</button>";
       echo "</form> </td>";
 
