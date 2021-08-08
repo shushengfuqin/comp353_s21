@@ -59,7 +59,8 @@
   echo '<th> City </th>';
   echo '<th> Province </th>';
   echo '<th> Postal Code</th>';
-  echo '<th> email </th>';
+  echo '<th> Email </th>';
+  echo '<th> Citizenship </th>';
   echo '</tr>';
 
   echo '<tr>';
@@ -72,7 +73,8 @@
   echo '<td>'. $person->city .'</td>';
   echo '<td>'. $person->province .'</td>';
   echo '<td>'. $person->postal_code .'</td>';
-  echo '<td>'. $person->email .'</td> </tr>';
+  echo '<td>'. $person->email .'</td>';
+  echo '<td>'. $person->citizen .'</td> </tr>';
   echo '</table>';
 
   $person->get_infection();

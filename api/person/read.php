@@ -85,7 +85,7 @@
 
 
     // button to add a new person
-    echo "<h1 style='display: inline-block margin: 0'> All Persons Information <a href='create.php'> <button class='header-button'> + Add New Person </button> </a> </h1>";
+    echo "<h1 style='display: inline-block margin: 0'> All Persons Information <a href='create_UI.php'> <button class='header-button'> + Add New Person </button> </a> </h1>";
 
     // begin listing all persons
     echo '<table>';

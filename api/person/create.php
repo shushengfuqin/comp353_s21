@@ -1,7 +1,7 @@
 <?php 
   // Headers
   header('Access-Control-Allow-Origin: *');
-  header('Content-Type: application/json');
+  // header('Content-Type: application/json');
   header('Access-Control-Allow-Methods: POST');
   header('Access-Control-Allow-Headers: Access-Control-Allow-Header, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
@@ -16,26 +16,29 @@
   $person = new Person($db);
 
   // Get raw person data
-  $data = json_decode(file_get_contents("php://input"));
+  // $data = json_decode(file_get_contents("php://input"));
 
-  $person->p_id = $data->p_id;
-  $person->first_name = $data->first_name;
-  $person->last_name = $data->last_name;
-  $person->dob = $data->dob;
-  $person->phone = $data->phone;
-  $person->address = $data->address;
-  $person->city = $data->city;
-  $person->province = $data->province;
-  $person->postal_code = $data->postal_code;
-  $person->email = $data->email;
+  // $person->p_id = $data->p_id;
+  $person->first_name = $_POST['first_name'];
+  $person->last_name = $_POST['last_name'];
+  $person->dob = $_POST['dob'];
+  $person->phone = $_POST['phone'];
+  $person->address = $_POST['address'];
+  $person->city = $_POST['city'];
+  $person->province = $_POST['province'];
+  $person->postal_code = $_POST['postal_code'];
+  $person->email = $_POST['email'];
+  $person->citizenship = $_POST['citizenship'];
 
   // Create person
   if($person->create()) {
-    echo json_encode(
-      array('message' => 'Post Created')
-    );
+    // echo json_encode(
+    //   array('message' => 'Post Created')
+    // );
+    header("read.php");
   } else {
-    echo json_encode(
-      array('message' => 'Post Not Created')
-    );
+    // echo json_encode(
+    //   array('message' => 'Post Not Created')
+    // );
+    echo "fail";
   }
