@@ -15,6 +15,7 @@
         public $province;
         public $postal_code;
         public $email;
+        public $citizenship;
         // added a infection history here
         public $infection;
 
@@ -82,6 +83,7 @@
           $this->province = $row['province'];
           $this->postal_code = $row['postal_code'];
           $this->email = $row['email'];
+          $this->citizen = $row['citizenship'];
 
         }
 
@@ -91,7 +93,7 @@
               $query = 'INSERT INTO ' .
               $this->table . ' 
             SET
-              p_id = :p_id,
+              
               first_name = :first_name,
               last_name = :last_name,
               dob = :dob,
@@ -100,13 +102,14 @@
               city = :city,
               province = :province,
               postal_code = :postal_code,
-              email = :email';
+              email = :email,
+              citizenship =:citizenship';
           
           //Prepare statement
           $stmt = $this->conn->prepare($query);
 
           //Bind data 
-          $stmt->bindParam(":p_id", $this->p_id);
+          // $stmt->bindParam(":p_id", $this->p_id);
           $stmt->bindParam(":first_name", $this->first_name);
           $stmt->bindParam(":last_name", $this->last_name);
           $stmt->bindParam(":dob", $this->dob);
@@ -116,6 +119,7 @@
           $stmt->bindParam(":province", $this->province);
           $stmt->bindParam(":postal_code", $this->postal_code);
           $stmt->bindParam(":email", $this->email);
+          $stmt->bindParam(":citizenship", $this->citizenship);
 
           //Execute query
           if($stmt->execute()){
@@ -126,6 +130,8 @@
           return false;
         }
         
+
+
         //update person 
         public function update(){
           //Create query
@@ -169,7 +175,7 @@
           }
     
         //delete person 还有问题
-        public function delete(){
+    public function delete(){
       //Create query
       $query = 'DELETE FROM ' . $this->table . ' WHERE p_id = :p_id';
 
