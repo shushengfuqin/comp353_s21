@@ -174,7 +174,7 @@
       printf("Error: %s.\n", $stmt->error);
       return false;
 
-          }
+    }
     
         //delete person 还有问题
     public function delete(){
@@ -187,12 +187,14 @@
       //Bind data 
       $stmt->bindParam(":p_id", $this->p_id);
 
-      //Execute query
-      if($stmt->execute()){
-        return true;
+      // Execute query
+      try{
+        $stmt->execute();
       }
-      // Print error if something goes wrong
-      printf("Error: %s.\n", $stmt->error);
-      return false;
-          }
-        }
+      catch (Exception $e){
+        return false;
+      }
+      return true;
+
+    }
+}
