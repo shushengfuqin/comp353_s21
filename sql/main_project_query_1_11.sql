@@ -118,8 +118,13 @@ DELETE FROM `pv_age` WHERE `province` = "TU";
 UPDATE `pv_age` SET `grp_id` = 9 WHERE `province` = "TU";
 
 -- Query 9
-
+-- ADD INTO INVENTORY OF LOC_ID 1 WITH VAC_ID 1. CURRENT QUANTIRY = 100. POST INSERT QUANTITY SHOULD = 101
+INSERT INTO `shipment` (`ship_id`,`loc_id`,`sdate`,`vac_id`,`quantity`) VALUES ("1","1","2021-08-08","1","1");
 
 -- Query 10
+-- TRANSFER FROM LOC_ID 1 TO LOC_ID 2 WITH VAC_ID 1. POST INSERT LOC 1 quantity = 100 loc 2 quantity = 301
+INSERT INTO `transfer` (`trans_id`,`from_loc`,`to_loc`,`tdate`,`vac_id`,`quantity`) VALUES ("1","1","2","2021-08-08","1","1");
 
 -- Query 11
+--Perform vaccin to p_id 1 where loc = 1, and the emp_id = 1 
+INSERT INTO `comp353`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('1', '1', '1005', '1', '1', '2021-02-28');
