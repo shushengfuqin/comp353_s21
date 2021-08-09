@@ -15,6 +15,7 @@ SELECT idate, variant_name FROM infection JOIN variant_type ON (type=variant_id)
 
 --delete person
 DELETE FROM person WHERE (p_id = 1);
+
 --Query 2
 
 --Create health_worker
@@ -36,6 +37,7 @@ DELETE FROM health_worker WHERE (p_id = 1);
 --Query 3
 
 --Create public health facility
+
 INSERT INTO `facility` (`loc_id`,`name`,`address`,`city`,`province`,`postal_code`,`phone`,`web`,`type`,`manager`) VALUES ("1001","test1_fac","test1_fac_add","test1_fac_city","QC","test1","5141111111","test1_web.com","Hospital","1");
 
 --Update public health facility 
@@ -43,6 +45,7 @@ UPDATE `facility` SET `name` = 'test1_update' WHERE `loc_id` = 1001;
 
 --display chosen  facility by id 
 SELECT * FROM facility WHERE (loc_id = 1001);
+
 
 --display all facility 
 SELECT * FROM facility;
@@ -128,3 +131,4 @@ INSERT INTO `transfer` (`trans_id`,`from_loc`,`to_loc`,`tdate`,`vac_id`,`quantit
 -- Query 11
 --Perform vaccin to p_id 1 where loc = 1, and the emp_id = 1 
 INSERT INTO `comp353`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('1', '1', '1005', '1', '1', '2021-02-28');
+

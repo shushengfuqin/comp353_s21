@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="../../includes/style.css">
-  <title>Home</title>
+  <title>Insert Person</title>
 </head>
 <body>
 

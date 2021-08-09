@@ -83,7 +83,7 @@
           $this->province = $row['province'];
           $this->postal_code = $row['postal_code'];
           $this->email = $row['email'];
-          $this->citizen = $row['citizenship'];
+          $this->citizenship = $row['citizenship'];
 
         }
 
@@ -146,7 +146,8 @@
           city = :city,
           province = :province,
           postal_code = :postal_code,
-          email = :email
+          email = :email,
+          citizenship = :citizenship
           WHERE p_id = :p_id';
   
   //Prepare statement
@@ -162,6 +163,7 @@
           $stmt->bindParam(":province", $this->province);
           $stmt->bindParam(":postal_code", $this->postal_code);
           $stmt->bindParam(":email", $this->email);
+          $stmt->bindParam(":citizenship", $this->citizenship);
           $stmt->bindParam(":p_id", $this->p_id);
           
           //Execute query
@@ -172,7 +174,7 @@
       printf("Error: %s.\n", $stmt->error);
       return false;
 
-          }
+    }
     
         //delete person 还有问题
     public function delete(){
@@ -185,12 +187,14 @@
       //Bind data 
       $stmt->bindParam(":p_id", $this->p_id);
 
-      //Execute query
-      if($stmt->execute()){
-        return true;
+      // Execute query
+      try{
+        $stmt->execute();
       }
-      // Print error if something goes wrong
-      printf("Error: %s.\n", $stmt->error);
-      return false;
-          }
-        }
+      catch (Exception $e){
+        return false;
+      }
+      return true;
+
+    }
+}

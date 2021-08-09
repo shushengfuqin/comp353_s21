@@ -32,13 +32,9 @@
 
   // Create person
   if($person->create()) {
-    // echo json_encode(
-    //   array('message' => 'Post Created')
-    // );
-    header("read.php");
+    header("Location: read.php");
   } else {
-    // echo json_encode(
-    //   array('message' => 'Post Not Created')
-    // );
-    echo "fail";
+    echo "<form>
+    <input type='button' value='Back' onclick='history.go(-1)'>
+    </form>";
   }
