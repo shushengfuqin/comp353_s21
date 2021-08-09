@@ -245,10 +245,9 @@ DROP TRIGGER IF EXISTS `hjc353_1`.`shipment_BEFORE_INSERT`;
 
 DELIMITER $$
 USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`shipment_BEFORE_INSERT` BEFORE INSERT ON `shipment` FOR EACH ROW
-BEGIN
+CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `shipment_BEFORE_INSERT` BEFORE INSERT ON `shipment` FOR EACH ROW BEGIN
 	
-	update inventory set inventory.quantity = inventory.quantity + new.quantity where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
+update inventory set inventory.quantity = inventory.quantity + new.quantity where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
         
 
 END$$
@@ -260,10 +259,9 @@ DROP TRIGGER IF EXISTS `hjc353_1`.`shipment_AFTER_DELETE`;
 
 DELIMITER $$
 USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`shipment_AFTER_DELETE` AFTER DELETE ON `shipment` FOR EACH ROW
-BEGIN
+CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `shipment_AFTER_DELETE` AFTER DELETE ON `shipment` FOR EACH ROW BEGIN
 
-update inventory set inventory.quantity = inventory.quantity - old.quantity where (old.loc_id = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
+ update inventory set inventory.quantity = inventory.quantity - old.quantity where (old.loc_id = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
 
 END$$
 DELIMITER ;
@@ -306,10 +304,9 @@ DROP TRIGGER IF EXISTS `hjc353_1`.`transfer_AFTER_DELETE`;
 
 DELIMITER $$
 USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`transfer_AFTER_DELETE` AFTER DELETE ON `transfer` FOR EACH ROW
-BEGIN
-	update inventory set inventory.quantity = inventory.quantity - old.quantity where (old.to_loc = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
-	update inventory set inventory.quantity = inventory.quantity + old.quantity where (old.from_loc = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
+CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `transfer_AFTER_DELETE` AFTER DELETE ON `transfer` FOR EACH ROW BEGIN
+update inventory set inventory.quantity = inventory.quantity - old.quantity where (old.to_loc = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
+update inventory set inventory.quantity = inventory.quantity + old.quantity where (old.from_loc = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
 END$$
 DELIMITER ;
 
@@ -322,23 +319,29 @@ DROP TRIGGER IF EXISTS `hjc353_1`.`vaccination_BEFORE_INSERT`;
 
 DELIMITER $$
 USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`vaccination_BEFORE_INSERT` BEFORE INSERT ON `vaccination` FOR EACH ROW
-BEGIN
-
-	if exists(SELECT ag.grp_id 
-			FROM pv_age pv, facility f, person p, age_group ag
-			WHERE  new.loc_id = f.loc_id  AND pv.province = f.province AND p.p_id = new.p_id 
-				AND (TRUNCATE(DATEDIFF(CURDATE(), p.dob) / 365, 0) BETWEEN ag.lower_limit AND ag.upper_limit) AND ag.grp_id > pv.grp_id)then
-		set new.p_id = NULL;
-		set new.dose_num = NULL;
-		set new.emp_id = NULL;
-		set new.vac_id = NULL;
-		set new.loc_id = NULL;
-		set new.vdate = NULL;
-	else
-		update inventory set inventory.quantity = inventory.quantity - 1 where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
-	end if;
-
+CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `vaccination_BEFORE_INSERT` BEFORE INSERT ON `vaccination` FOR EACH ROW BEGIN
+if exists(SELECT ag.grp_id 
+	FROM pv_age pv, facility f, person p, age_group ag
+	WHERE  new.loc_id = f.loc_id  AND pv.province = f.province AND p.p_id = new.p_id 
+	AND (TRUNCATE(DATEDIFF(CURDATE(), p.dob) / 365, 0) BETWEEN ag.lower_limit AND ag.upper_limit) AND ag.grp_id > pv.grp_id)
+	then
+	set new.p_id = NULL;
+    set new.dose_num = NULL;
+    set new.emp_id = NULL;
+    set new.vac_id = NULL;
+    set new.loc_id = NULL;
+    set new.vdate = NULL;
+ 
+elseif exists(SELECT i.quantity FROM inventory i  WHERE new.loc_id = i.loc_id AND new.vac_id = i.vac_id AND i.quantity=0)then
+	set new.p_id = NULL;
+    set new.dose_num = NULL;
+    set new.emp_id = NULL;
+    set new.vac_id = NULL;
+    set new.loc_id = NULL;
+    set new.vdate = NULL;																				
+else
+	update inventory set inventory.quantity = inventory.quantity - 1 where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
+end if;
 END$$
 DELIMITER ;
 
@@ -349,10 +352,9 @@ DROP TRIGGER IF EXISTS `hjc353_1`.`vaccination_AFTER_DELETE`;
 
 DELIMITER $$
 USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`vaccination_AFTER_DELETE` AFTER DELETE ON `vaccination` FOR EACH ROW
-BEGIN
+CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `vaccination_AFTER_DELETE` AFTER DELETE ON `vaccination` FOR EACH ROW BEGIN
 
-update inventory set inventory.quantity = inventory.quantity + 1 where (old.loc_id = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
+ update inventory set inventory.quantity = inventory.quantity + 1 where (old.loc_id = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
 
 END$$
 DELIMITER ;
