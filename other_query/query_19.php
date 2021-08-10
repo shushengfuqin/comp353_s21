@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="../includes/style.css">
-  <title>Query 12</title>
+  <title>Query 19</title>
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 
 <div class="main">
 
-    <h3> (12) Get details of all the people who got vaccinated only one dose and are of group ages 1 to 3 (first-name, last-name, date of birth, email, phone, city, date of vaccination, vaccination type, been infected by COVID-19 before or not). </h3>
+    <h3> (19) Give a list of all public health workers in a specific facility (EmployeeID, Social Security Number (SSN), first-name, last-name, date of birth, medicare card number, telephone-number, address, city, province, postal-code, citizenship, email address, and history of employment).</h3>
 
     <?php
         include_once '../config/Database.php';
@@ -35,18 +35,13 @@
         $db = $database->connect();
 
         // prepare query
-        $query = "SELECT p.first_name, p.last_name, p.dob, p.email, p.phone, p.city,v.vdate, va.name AS vaccination_type,IF(inf.p_id IS NOT NULL,'YES','NO') AS 'infected'
-        FROM person p
-        JOIN vaccination v ON p.p_id = v.p_id
-        JOIN vaccine va ON v.vac_id = va.vac_id
-        LEFT JOIN  (SELECT DISTINCT(p_id) FROM infection) AS inf ON inf.p_id = p.p_id
-        WHERE (p.p_id IN (SELECT p_id
-          FROM vaccination
-          GROUP BY p_id
-          HAVING COUNT(dose_num)=1))
-      AND (TRUNCATE(DATEDIFF(CURDATE(), p.dob) / 365, 0) BETWEEN (SELECT
-      lower_limit FROM age_group WHERE grp_id = 3) AND (SELECT upper_limit FROM
-          age_group WHERE grp_id = 1));";
+        $query = "SELECT hw.emp_id, c.ssn, p.first_name, p.last_name, p.dob, c.medicare, p.phone, p.address, p.city, p.province, p.postal_code, p.citizenship, p.email, wh.start_date, wh.end_date
+          FROM health_worker hw
+          JOIN person p ON p.p_id = hw.p_id
+          JOIN citizen c ON hw.p_id = c.p_id 
+          JOIN work_history wh ON hw.emp_id = wh.emp_id         
+          JOIN facility f ON wh.loc_id = f.loc_id
+          WHERE f.loc_id = 2;";
 
         $stmt = $db->prepare($query);
 
@@ -55,29 +50,41 @@
 
         // table header
         echo "<table><tr>";
+        echo "<th> Employee ID </th>";
+        echo "<th> SSN </th>";
         echo "<th> First Name </th>";
         echo "<th> Last Name </th>";
         echo "<th> Date of Birth </th>";
-        echo "<th> Email </th>";
+        echo "<th> Medicare # </th>";
         echo "<th> Phone # </th>";
+        echo "<th> Address </th>";
         echo "<th> City </th>";
-        echo "<th> Vaccination Date </th>";
-        echo "<th> Vaccination Type </th>";
-        echo "<th> Has Been Infected </th> </tr>";
+        echo "<th> Province </th>";
+        echo "<th> Postal Code </th>";
+        echo "<th> Citizenship </th>";
+        echo "<th> Email </th>";
+        echo "<th> Start Date </th>";
+        echo "<th> End Date </th> </tr>";
 
         // extract data from stmt
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
           extract($row);
           echo "<tr>";
+          echo "<td>". $emp_id ."</td>";
+          echo "<td>". $ssn ."</td>";
           echo "<td>". $first_name ."</td>";
           echo "<td>". $last_name ."</td>";
           echo "<td>". $dob ."</td>";
-          echo "<td>". $email ."</td>";
+          echo "<td>". $medicare ."</td>";
           echo "<td>". $phone ."</td>";
+          echo "<td>". $address ."</td>";
           echo "<td>". $city ."</td>";
-          echo "<td>". $vdate ."</td>";
-          echo "<td>". $vaccination_type ."</td>";
-          echo "<td>". $infected ."</td>";
+          echo "<td>". $province ."</td>";
+          echo "<td>". $postal_code ."</td>";
+          echo "<td>". $citizenship ."</td>";
+          echo "<td>". $email ."</td>";
+          echo "<td>". $start_date ."</td>";
+          echo "<td>". $end_date ."</td>";
           echo "</tr>";
         }
 
