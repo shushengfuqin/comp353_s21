@@ -22,7 +22,7 @@
   <a href="#">Manage Province</a>
   <a href="#">Manage Vaccine Inventory</a>
   <a href="#">Perform Vaccine</a>
-  <a href="#">Other Query</a>
+  <a href="other_query/other_query_UI.php">Other Query</a>
 </div>
 
 <div class="main">
