@@ -1,9 +1,9 @@
 <?php 
   // Headers
-  header('Access-Control-Allow-Origin: *');
+  // header('Access-Control-Allow-Origin: *');
   // header('Content-Type: application/json');
-  header('Access-Control-Allow-Methods: POST');
-  header('Access-Control-Allow-Headers: Access-Control-Allow-Header, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
+  // header('Access-Control-Allow-Methods: POST');
+  // header('Access-Control-Allow-Headers: Access-Control-Allow-Header, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
   include_once '../../config/Database.php';
   include_once '../../models/Person.php';
@@ -32,7 +32,10 @@
 
   // Create person
   if($person->create()) {
-    header("Location: read.php");
+    // header("Location: read.php");
+    echo '<script type="text/javascript">
+           window.location = "read.php"
+      </script>';
   } else {
     echo "<form>
     <input type='button' value='Back' onclick='history.go(-1)'>

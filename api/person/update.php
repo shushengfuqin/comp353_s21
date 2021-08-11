@@ -1,10 +1,10 @@
 
 <?php 
   // Headers
-  header('Access-Control-Allow-Origin: *');
+  // header('Access-Control-Allow-Origin: *');
   // header('Content-Type: application/json');
-  header('Access-Control-Allow-Methods: POST');
-  header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
+  // header('Access-Control-Allow-Methods: POST');
+  // header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
   include_once '../../config/Database.php';
   include_once '../../models/Person.php';
@@ -32,7 +32,10 @@
   
     // Update post
     if($person->update()) {
-      header("Location: read.php");
+      // header("Location: read.php");
+      echo '<script type="text/javascript">
+           window.location = "read.php"
+      </script>';
     } else {
       echo "fail";
     }

@@ -1,9 +1,9 @@
 <?php 
   // Headers
-  header('Access-Control-Allow-Origin: *');
+  // header('Access-Control-Allow-Origin: *');
   // header('Content-Type: application/json');
-  header('Access-Control-Allow-Methods: GET');
-  header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
+  // header('Access-Control-Allow-Methods: GET');
+  // header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
   include_once '../../config/Database.php';
   include_once '../../models/Person.php';
@@ -23,7 +23,10 @@
 
   // delete post
   if($person->delete()) {
-    Header("Location: read.php");
+    // Header("Location: read.php");
+    echo '<script type="text/javascript">
+           window.location = "read.php"
+      </script>';
   } else {
     echo "<h1> Deletion Failed! </h1>";
     echo "<form>
