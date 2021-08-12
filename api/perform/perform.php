@@ -20,7 +20,7 @@
   <a href="../../api/variant/read_variant.php">COVID-19 Variants</a>
   <a href="../../api/agegroup/read_agegroup.php">Age Groups</a>
   <a href="../../api/province/read_province.php">Manage Province</a>
-  <a href="#">Manage Vaccine Inventory</a>
+  <a href="../../api/inventory/inventory_UI.php">Manage Vaccine Inventory</a>
   <a href="../../api/perform/perform.php">Perform Vaccine</a>
   <a href="../../other_query/other_query_UI.php">Other Query</a>
 </div>
@@ -59,6 +59,7 @@
   <input type='submit' value='Perform'>
   </form>
 
+  <h2> Vaccination Data </h2>
   <!-- Print vaccination -->
   <?php 
 
