@@ -88,6 +88,8 @@
     echo '<th> Group ID </th>';
     echo '<th> Upper limit </th>';
     echo '<th> Lower limit </th>';
+    echo '<th> Edit </th>';
+    echo '<th> Delete </th>';
     echo '</tr>';
 
     foreach($age_arr as $age) {

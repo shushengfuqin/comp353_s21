@@ -86,6 +86,8 @@
     //echo '<th> Facility ID </th>';
     echo '<th> province </th>';
     echo '<th> grp_id </th>';
+    echo '<th> Edit </th>';
+    echo '<th> Delete </th>';
     echo '</tr>';
 
     foreach($province_arr as $province) {

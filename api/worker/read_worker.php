@@ -86,6 +86,8 @@
     //echo '<th> Facility ID </th>';
     echo '<th> ID </th>';
     echo '<th> emp_id </th>';
+    echo '<th> Edit </th>';
+    echo '<th> Delete </th>';
     echo '</tr>';
 
     foreach($worker_arr as $worker) {

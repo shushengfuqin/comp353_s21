@@ -89,6 +89,8 @@
     echo '<th> name </th>';
     echo '<th> vac_desc </th>';
     echo '<th> status </th>';
+    echo '<th> Edit </th>';
+    echo '<th> Delete </th>';
     echo '</tr>';
 
     foreach($vaccine_arr as $vaccine) {

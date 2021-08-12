@@ -86,6 +86,8 @@
     //echo '<th> Facility ID </th>';
     echo '<th> ID </th>';
     echo '<th> Name </th>';
+    echo '<th> Edit </th>';
+    echo '<th> Delete </th>';
     echo '</tr>';
 
     foreach($variant_arr as $variant) {
