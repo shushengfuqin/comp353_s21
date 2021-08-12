@@ -20,8 +20,8 @@
   <a href="../../api/variant/read_variant.php">COVID-19 Variants</a>
   <a href="../../api/agegroup/read_agegroup.php">Age Groups</a>
   <a href="../../api/province/read_province.php">Manage Province</a>
-  <a href="#">Manage Vaccine Inventory</a>
-  <a href="#">Perform Vaccine</a>
+  <a href="../../api/inventory/inventory_UI.php">Manage Vaccine Inventory</a>
+  <a href="../../api/perform/perform.php">Perform Vaccine</a>
   <a href="../../other_query/other_query_UI.php">Other Query</a>
 </div>
 
@@ -90,30 +90,28 @@
     // begin listing all facilities
     echo '<table>';
     echo '<tr>'; 
-    //echo '<th> Facility ID </th>';
+    echo '<th> Facility ID </th>';
     echo '<th> Name </th>';
     echo '<th> Address </th>';
     echo '<th> City </th>';
     echo '<th> Province </th>';
     echo '<th> Postal Code</th>';
-    echo '<th> Phone </th>';
-    echo '<th> WEB </th>';
-    echo '<th> Manager ID </th>';
+    // echo '<th> Phone </th>';
+    // echo '<th> WEB </th>';
     echo '<th> Edit </th>';
     echo '<th> Delete </th>';
     echo '</tr>';
 
     foreach($facility_arr as $facility) {
       echo '<tr>';
-      // '<td>'. $facility['loc_id'] .'</td>';
+      echo '<td>'. $facility['loc_id'] .'</td>';
       echo '<td>'. $facility['name'] .'</td>';
       echo '<td>'. $facility['address'] .'</td>';
       echo '<td>'. $facility['city'] .'</td>';
       echo '<td>'. $facility['province'] .'</td>';
       echo '<td>'. $facility['postal_code'] .'</td>';
-      echo '<td>'. $facility['phone'] .'</td>';
-      echo '<td>'. $facility['web'] .'</td>';
-      echo '<td>'. $facility['manager'] .'</td>';
+      // echo '<td>'. $facility['phone'] .'</td>';
+      // echo '<td>'. $facility['web'] .'</td>';
       /* delete and edit button for the facility - requires two separate forms */
       echo "<td>";
       echo "<form method='get' action='update_UI_facility.php'>";

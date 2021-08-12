@@ -41,9 +41,12 @@
           JOIN citizen c ON hw.p_id = c.p_id 
           JOIN work_history wh ON hw.emp_id = wh.emp_id         
           JOIN facility f ON wh.loc_id = f.loc_id
-          WHERE f.loc_id = 1;";
+          WHERE f.loc_id = ? ;";
+        // Get ID
+        $loc_id = isset($_GET['loc_id']) ? $_GET['loc_id'] : die();
 
         $stmt = $db->prepare($query);
+        $stmt->bindParam(1, $loc_id);
 
         // Execute query
         $stmt->execute();
