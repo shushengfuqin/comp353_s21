@@ -264,6 +264,8 @@ elseif new.emp_id NOT IN (SELECT wh.emp_id
                             WHERE wh.loc_id = new.loc_id 
                                 AND ((new.vdate BETWEEN wh.start_date AND wh.end_date) OR (new.vdate > wh.start_date AND end_date IS NULL)))then
     SIGNAL sqlstate '45000' SET MESSAGE_TEXT = 'THE EMPLOYEE ID IS NOT CORRECT ';
+elseif new.vac_id IN (SELECT vac_id FROM vaccine WHERE status = 'suspend')then
+    SIGNAL sqlstate '45000' SET MESSAGE_TEXT = 'THE VACCINE IS SUSPEND STATUS ';
 else
     update inventory set inventory.quantity = inventory.quantity - 1 where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
 end if;
