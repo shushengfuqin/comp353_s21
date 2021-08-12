@@ -43,20 +43,20 @@
     $stmt->bindParam(":vdate", $_POST['vdate']);
 
 
-    // try{
-    //     $stmt->execute();
-    //     echo '<script type="text/javascript">
-    //        window.location = "perform.php"
-    //   </script>';
-    // }
-    // catch(Exception $e){
-    //     echo '<h2> Vaccination Failed due to: </h2>';
-    //     // echo '<p>'. $stmt->error .'</p>';
-    //     // printf("Error: %s", $stmt->error);
-    //     echo "<form>
-    //     <input type='button' value='Back' onclick='history.go(-1)'>
-    //     </form>";
-    // }
+    try{
+        $stmt->execute();
+        echo '<script type="text/javascript">
+           window.location = "perform.php"
+      </script>';
+    }
+    catch(Exception $e){
+        echo '<h2> Vaccination Failed due to: </h2>';
+        echo '<p>'. $e->getMessage() .'</p>';
+        // printf("Error: %s", $stmt->error);
+        echo "<form>
+        <input type='button' value='Back' onclick='history.go(-1)'>
+        </form>";
+    }
 
-    $stmt->execute();
+    // $stmt->execute();
 ?>
