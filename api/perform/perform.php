@@ -58,6 +58,73 @@
 
   <input type='submit' value='Perform'>
   </form>
+
+  <!-- Print vaccination -->
+  <?php 
+
+  include_once '../../config/Database.php';
+  include_once '../../models/Vaccination.php';
+
+  // Instantiate DB & connect
+  $database = new Database();
+  $db = $database->connect();
+
+  // Instantiate blog person object
+  $vaccination = new Vaccination($db);
+
+  // Blog person query
+  $result = $vaccination->read();
+  // Get row count
+  $num = $result->rowCount();
+
+  // Check if any persons
+  if($num > 0) {
+
+    // store the result in an array
+    $vac_arr = array();
+    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+      extract($row);
+
+      $vac_item = array(
+        'p_id' => $p_id,
+        'dose_num' => $dose_num,
+        'emp_id' => $emp_id,
+        'vac_id' => $vac_id,
+        'loc_id' => $loc_id,
+        'vdate' => $vdate,
+      );
+      array_push($vac_arr, $vac_item);
+    }
+
+    // begin listing all facilities
+    echo '<table>';
+    echo '<tr>'; 
+    echo '<th> Person ID </th>';
+    echo '<th> Dose Number </th>';
+    echo '<th> Employee ID </th>';
+    echo '<th> Vaccination ID </th>';
+    echo '<th> Facility ID </th>';
+    echo '<th> Vaccination Date</th>';
+    echo '</tr>';
+
+    foreach($vac_arr as $v) {
+      echo '<tr>';
+      echo '<td>'. $v['p_id'] .'</td>';
+      echo '<td>'. $v['dose_num'] .'</td>';
+      echo '<td>'. $v['emp_id'] .'</td>';
+      echo '<td>'. $v['vac_id'] .'</td>';
+      echo '<td>'. $v['loc_id'] .'</td>';
+      echo '<td>'. $v['vdate'] .'</td>';
+      echo "</tr>";
+    }
+
+    echo '</table>';
+
+  } 
+  else {
+    echo "<h1 style='color:red'> Vaccination table is currently empty. <h1>";
+  }
+?>
 </div>
 </body>
 </html>

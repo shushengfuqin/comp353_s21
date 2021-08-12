@@ -52,11 +52,8 @@
     catch(Exception $e){
         echo '<h2> Vaccination Failed due to: </h2>';
         echo '<p>'. $e->getMessage() .'</p>';
-        // printf("Error: %s", $stmt->error);
         echo "<form>
         <input type='button' value='Back' onclick='history.go(-1)'>
         </form>";
     }
-
-    // $stmt->execute();
 ?>

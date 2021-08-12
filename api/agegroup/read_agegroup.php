@@ -21,7 +21,7 @@
   <a href="read_agegroup.php">Age Groups</a>
   <a href="../../api/province/read_province.php">Manage Province</a>
   <a href="#">Manage Vaccine Inventory</a>
-  <a href="#">Perform Vaccine</a>
+  <a href="../../api/perform/perform.php">Perform Vaccine</a>
   <a href="../../other_query/other_query_UI.php">Other Query</a>
 </div>
 
