@@ -27,7 +27,7 @@
 
 <div class="main">
 
-
+    <div class="box">
     <h3> Please fill out the following information to perform a vaccine </h3>
     <form method="post" action="perform_transaction.php">
     <label> <b>Person ID</b> </label>
@@ -58,7 +58,7 @@
 
   <input type='submit' value='Perform'>
   </form>
-
+</div>
   <h2> Vaccination Data </h2>
   <!-- Print vaccination -->
   <?php 
