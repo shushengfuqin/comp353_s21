@@ -286,3 +286,14 @@ CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `vaccination_AFTER_DELETE` AFTER
 END$$
 DELIMITER ;
 
+
+DROP TRIGGER IF EXISTS `hjc353_1`.`vaccine_BEFORE_UPDATE`;
+
+DELIMITER $$
+USE `hjc353_1`$$
+CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `vaccine_BEFORE_UPDATE` BEFORE UPDATE ON `vaccine` FOR EACH ROW BEGIN
+ INSERT INTO vaccine_history (vac_id,update_date,update_status) VALUES(new.vac_id,curdate(),new.status);
+
+END$$
+DELIMITER ;
+
