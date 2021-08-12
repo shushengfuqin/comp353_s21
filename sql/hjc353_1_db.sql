@@ -1,4 +1,4 @@
-USE hjc353_1;
+USE`hjc353_1`;
 INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10001', 'John', 'Smith', '1980-12-01', '5142223333', '123 Hutchison Street', 'Montreal', 'QC', 'H2X2G7', 'john@gamil.com', 'Canada');
 INSERT INTO `hjc353_1`.`person` (`p_id`,`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10002','Tom', 'Van De Camp', '1991-06-03', '5145225751', '1234 Saint-Catherine Street West', 'Montreal', 'QC', 'H1Y2L5', 'tom@gamil.com', 'Canada');
 INSERT INTO `hjc353_1`.`person` (`p_id`,`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10003','Kelby', 'Matterdace', '1992-08-01', '4387772222', '124 Cruze', 'Toronto', 'ON', 'T4E2N2', 'kelby@gmail.com', 'Canada');
@@ -20,6 +20,15 @@ INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `add
 INSERT INTO `hjc353_1`.`person` (`first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('Frank', 'Fisher', '2001-10-13', '4352228888', '234 Bourassa street', 'St.John\'s', 'NL', 'J4H3B3', 'fisher@gmail.com', 'Canada');
 INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10020', 'Daniel', 'Tony', '1985-02-03', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H3J2B3', 'tonyd@gmail.com', 'Canada');
 
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10021', 'Todd', 'Lopez', '1955-04-03', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H1J2B3', 'toddL@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10022', 'Isabell', 'Pretty', '1958-05-23', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H6J2B3', 'IsaP@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10023', 'Cassian', 'Cooke', '1940-06-13', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H5J2B3', 'CassC@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10024', 'Garin', 'Church', '1950-07-05', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H2J2B3', 'GarC@gmail.com', 'Canada');
+
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10025', 'Eilidh', 'Lu', '1970-04-03', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H3J2B4', 'EilidL@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10026', 'Sameera', 'Whittington', '1986-05-23', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H3J3B3', 'SameeraW@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10027', 'Diogo', 'Thomson', '1986-06-13', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H3J223', 'KhiaC@gmail.com', 'Canada');
+INSERT INTO `hjc353_1`.`person` (`p_id`, `first_name`, `last_name`, `dob`, `phone`, `address`, `city`, `province`, `postal_code`, `email`, `citizenship`) VALUES ('10028', 'Katie-Louise', 'Cortes', '1990-07-05', '4356274422', '985 Guy Concordia', 'Montreal', 'QC', 'H3J2G3', 'KLC@gmail.com', 'Canada');
 
 
 
@@ -42,6 +51,10 @@ INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10017', '3
 INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10018', '345786111', 'QSAZ90901212');
 INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10019', '334543777', 'PJHG38291234');
 INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10020', '333676799', 'UJHG39201023');
+INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10021', '344342568', 'GHJK34524321');
+INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10022', '345123443', 'QSAZ90943212');
+INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10023', '334534565', 'PJHG38291876');
+INSERT INTO `hjc353_1`.`citizen` (`p_id`, `ssn`, `medicare`) VALUES ('10024', '333676734', 'UJHG39201067');
 
 
 
@@ -59,6 +72,10 @@ INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10014', '1007
 INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10015', '1008');
 INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10017', '1009');
 INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10020', '1010');
+INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10021', '1011');
+INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10022', '1012');
+INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10023', '1013');
+INSERT INTO `hjc353_1`.`health_worker` (`p_id`, `emp_id`) VALUES ('10024', '1014');
 
 
 
@@ -85,7 +102,14 @@ INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10002', '2
 INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10002', '2020-09-11', 2);
 INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10006', '2021-01-08', 3);
 INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10006', '2021-07-07', 4);
-INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10018', '2021-08-01', '5');
+INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10018', '2021-05-01', '5');
+
+INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10021', '2021-03-05', 1);
+INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10021', '2021-09-11', 2);
+INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10022', '2021-01-08', 3);
+INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10022', '2021-07-07', 4);
+INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10023', '2021-01-08', 3);
+INSERT INTO `hjc353_1`.`infection` (`p_id`, `idate`, `type`) VALUES ('10023', '2021-07-07', 4);
 
 
 INSERT INTO `hjc353_1`.`pv_age` (`province`) VALUES ('QC');
@@ -121,9 +145,13 @@ INSERT INTO `hjc353_1`.`facility` (`name`, `address`, `city`, `province`, `posta
 INSERT INTO `hjc353_1`.`facility` (`name`, `address`, `city`, `province`, `postal_code`, `phone`, `web`, `type`, `manager`) VALUES ('Clinique Accès Infirmières', '287 Boul. d’Anjou Châteauguay', 'TORONTO', 'ON', 'M1N2M2', '4590021212', 'www.convid.com', 'clinic', '10011');
 INSERT INTO `hjc353_1`.`facility` (`name`, `address`, `city`, `province`, `postal_code`, `phone`, `web`, `type`, `manager`) VALUES ('Olympic Stadium', '4545 Pierre-de Coubertin Ave', 'Vancouver', 'BC', 'L2N3J3', '4504446663', 'www.convid.com', 'special installment', '10016');
 INSERT INTO `hjc353_1`.`facility` (`name`, `address`, `city`, `province`, `postal_code`, `phone`, `web`, `type`, `manager`) VALUES ('Hospital Charles-Le Moyne', '3120 Taschereau Blvd', 'Edmonton', 'AB', 'J6E3B3', '4363421234', 'www.convid.com', 'hospital', '10007');
+INSERT INTO `hjc353_1`.`facility` (`name`, `address`, `city`, `province`, `postal_code`, `phone`, `web`, `type`, `manager`) VALUES ('Clinique de vaccination d Ahuntsic', '800 Boul Henri-Bourassa O', 'Laval', 'QC', 'H3L1P5', '4590021212', 'www.convid.com', 'clinic', '10020');
+INSERT INTO `hjc353_1`.`facility` (`name`, `address`, `city`, `province`, `postal_code`, `phone`, `web`, `type`, `manager`) VALUES ('Clinique de vaccination de Montréal-Nord', '11201, blvd. Lacordaire', 'Gatineau', 'QC', 'H1G4J7', '4504446663', 'www.convid.com', 'clinic', '10018');
+INSERT INTO `hjc353_1`.`facility` (`name`, `address`, `city`, `province`, `postal_code`, `phone`, `web`, `type`, `manager`) VALUES ('Clinique de vaccination Christophe-Colomb', '7355, av. Christophe-Colomb', 'Longueuil', 'QC', 'H2R2S5', '4363421234', 'www.convid.com', 'clinic', '10019');
 
 
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1001', '1', '2020-03-16');
+INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1001', '2', '2021-01-16');
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1002', '2', '2020-09-10');
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`,`end_date`) VALUES ('1003', '3', '2020-10-10','2020-12-30');
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1004', '4', '2020-12-12');
@@ -136,7 +164,12 @@ INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`,`end_dat
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1005', '1', '2020-12-10');
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1009', '5', '2021-01-22');
 INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1010', '2', '2021-01-19');
+INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1010', '8', '2021-07-19');
 
+INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1011', '1', '2020-12-10');
+INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1012', '5', '2021-01-22');
+INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1013', '2', '2021-01-19');
+INSERT INTO `hjc353_1`.`work_history` (`emp_id`, `loc_id`, `start_date`) VALUES ('1014', '2', '2021-07-19');
 
 INSERT INTO `hjc353_1`.`vaccine` (`vac_id`, `name`, `vac_desc`, `status`) VALUES ('1', 'Pfizer-BioNTech', 'mRNA', 'safe');
 INSERT INTO `hjc353_1`.`vaccine` (`vac_id`, `name`, `vac_desc`, `status`) VALUES ('2', 'Moderna', 'mRNA', 'safe');
@@ -198,6 +231,10 @@ INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quan
 INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('125', '5', '2021-03-17', '3', '100');
 INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('126', '5', '2021-08-01', '4', '200');
 
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('127', '6', '2021-03-17', '3', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('128', '7', '2021-06-01', '4', '200');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('129', '8', '2021-03-17', '3', '100');
+INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('130', '6', '2021-05-01', '4', '200');
 
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10001', '1', '1005', '1', '1', '2021-02-28');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10001', '2', '1002', '2', '2', '2021-04-01');
@@ -216,6 +253,21 @@ INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `l
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10017', '1', '1002', '2', '2', '2021-03-23');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10016', '1', '1003', '1', '2', '2021-04-22');
 INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10016', '2', '1002', '2', '2', '2021-07-29');
+
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10021', '1', '1002', '2', '2', '2021-05-06');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10022', '1', '1003', '2', '2', '2021-05-04');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10023', '1', '1004', '2', '2', '2021-06-07');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10024', '1', '1005', '2', '2', '2021-06-09');
+
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10025', '1', '1002', '1', '1', '2021-05-06');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10025', '2', '1003', '2', '1', '2021-06-04');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10026', '1', '1004', '3', '1', '2021-06-07');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10026', '2', '1005', '4', '1', '2021-08-09');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10027', '1', '1002', '1', '1', '2021-05-06');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10027', '2', '1003', '3', '1', '2021-07-04');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10028', '1', '1004', '2', '1', '2021-06-07');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10028', '2', '1005', '4', '1', '2021-08-09');
+
 
 
 
