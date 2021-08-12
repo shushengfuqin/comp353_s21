@@ -14,14 +14,14 @@
 <div class="sidebar">
   <a href="../index.php">Home</a>
   <a href="../api/person/read.php">Person</a>
-  <a href="#">Public Health Worker</a>
-  <a href="#">Public Health Facility</a>
-  <a href="#">Vaccination Type</a>
-  <a href="#">COVID-19 Variants</a>
-  <a href="#">Age Groups</a>
-  <a href="#">Manage Province</a>
+  <a href="../api/worker/read_worker.php">Public Health Worker</a>
+  <a href="../api/facility/read_facility.php">Public Health Facility</a>
+  <a href="../api/vaccine/read_vaccine.php">Vaccination Type</a>
+  <a href="../api/variant/read_variant.php">COVID-19 Variants</a>
+  <a href="../api/agegroup/read_agegroup.php">Age Groups</a>
+  <a href="../api/province/read_province.php">Manage Province</a>
   <a href="#">Manage Vaccine Inventory</a>
-  <a href="#">Perform Vaccine</a>
+  <a href="../api/vaccination/read_vaccination.php">Perform Vaccine</a>
   <a href="other_query_UI.php">Other Query</a>
 </div>
 
@@ -43,7 +43,20 @@
 
     <dd> <a href="query_18.php">(18)</a>  Give a detailed report of all the facilities in the city of Montréal. The report should include the name, address, type and phone number of the facility, the total number of public health workers working in the facility, the total number of shipments of vaccines received by the facility, the total number of doses received by the facility, the total number of transfer of vaccines from the facility and transfer to the facility, the total number of doses transferred from the facility, the total number of doses transferred to the facility, the total number of vaccines of each type in the facility, the number of people vaccinated in the facility, and the number of doses people have received in the facility. </dd>
 
-    <dd> <a href="query_19.php">(19)</a> Give a list of all public health workers in a specific facility (EmployeeID, Social Security Number (SSN), first-name, last-name, date of birth, medicare card number, telephone-number, address, city, province, postal-code, citizenship, email address, and history of employment).</dd>
+    <dd> (19)</a> Give a list of all public health workers in a specific facility (EmployeeID, Social Security Number (SSN), first-name, last-name, date of birth, medicare card number, telephone-number, address, city, province, postal-code, citizenship, email address, and history of employment).</dd>
+    <dd>Please choose one facility ID:</dd>
+    <dd>
+    <button id= "btn" onclick="window.location.href='query_19_1.php'">loc_id=1</button>
+    <button id= "btn" onclick="window.location.href='query_19_2.php'">loc_id=2</button>
+    <button id= "btn" onclick="window.location.href='query_19_3.php'">loc_id=3</button>
+    <button id= "btn" onclick="window.location.href='query_19_4.php'">loc_id=4</button>
+    <button id= "btn" onclick="window.location.href='query_19_5.php'">loc_id=5</button>
+    <button id= "btn" onclick="window.location.href='query_19_6.php'">loc_id=6</button>
+    <button id= "btn" onclick="window.location.href='query_19_7.php'">loc_id=7</button>
+    <button id= "btn" onclick="window.location.href='query_19_8.php'">loc_id=8</button>
+  </dd>
+    
+
 
     <dd> <a href="query_20.php">(20)</a> Give a list of all public health workers in Québec who never been vaccinated or who have been vaccinated only one dose for Covid-19 (EmployeeID, first-name, last-name, date of birth, telephone-number, city, email address, locations name where the employee work). </dd>
 
