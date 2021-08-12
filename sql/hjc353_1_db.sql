@@ -166,46 +166,10 @@ INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`) VALUES ('4', '2');
 INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`) VALUES ('4', '3');
 INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`) VALUES ('4', '4');
 INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`) VALUES ('3', '3');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '100' WHERE (`loc_id` = '1') and (`vac_id` = '1');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '200' WHERE (`loc_id` = '1') and (`vac_id` = '2');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '200' WHERE (`loc_id` = '1') and (`vac_id` = '3');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '100' WHERE (`loc_id` = '1') and (`vac_id` = '4');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '300' WHERE (`loc_id` = '2') and (`vac_id` = '1');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '400' WHERE (`loc_id` = '2') and (`vac_id` = '2');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '500' WHERE (`loc_id` = '2') and (`vac_id` = '3');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '100' WHERE (`loc_id` = '2') and (`vac_id` = '4');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '500' WHERE (`loc_id` = '3') and (`vac_id` = '1');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '200' WHERE (`loc_id` = '3') and (`vac_id` = '2');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '300' WHERE (`loc_id` = '3') and (`vac_id` = '3');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '100' WHERE (`loc_id` = '3') and (`vac_id` = '4');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '200' WHERE (`loc_id` = '4') and (`vac_id` = '1');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '300' WHERE (`loc_id` = '4') and (`vac_id` = '2');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '90' WHERE (`loc_id` = '4') and (`vac_id` = '3');
-UPDATE `hjc353_1`.`inventory` SET `quantity` = '100' WHERE (`loc_id` = '4') and (`vac_id` = '4');
-INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`, `quantity`) VALUES ('5', '1', '100');
-INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`, `quantity`) VALUES ('5', '2', '500');
-INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`, `quantity`) VALUES ('5', '3', '100');
-INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`, `quantity`) VALUES ('5', '4', '200');
-
-
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10001', '1', '1005', '1', '1', '2021-02-28');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10001', '2', '1002', '2', '2', '2021-04-01');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10002', '1', '1003', '4', '2', '2021-03-20');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10003', '1', '1006', '2', '2', '2021-04-03');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10004', '1', '1006', '3', '2', '2021-01-19');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10004', '2', '1006', '4', '2', '2021-04-05');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10006', '1', '1004', '1', '3', '2021-03-18');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10008', '1', '1004', '2', '3', '2021-05-01');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10008', '2', '1007', '1', '3', '2021-07-30');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10009', '1', '1008', '2', '4', '2021-03-28');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10010', '1', '1009', '1', '5', '2021-02-05');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10010', '2', '1009', '1', '5', '2021-05-06');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10014', '1', '1004', '2', '4', '2021-03-12');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10018', '1', '1006', '1', '2', '2021-05-20');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10017', '1', '1002', '2', '2', '2021-03-23');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10016', '1', '1003', '1', '2', '2021-04-22');
-INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10016', '2', '1002', '2', '2', '2021-07-29');
-
+INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`) VALUES ('5', '1');
+INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`) VALUES ('5', '2');
+INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`) VALUES ('5', '3');
+INSERT INTO `hjc353_1`.`inventory` (`loc_id`, `vac_id`) VALUES ('5', '4');
 
 INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('101', '1', '2020-12-30', '1', '50');
 INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('102', '1', '2021-01-02', '1', '50');
@@ -235,127 +199,30 @@ INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quan
 INSERT INTO `hjc353_1`.`shipment` (`ship_id`, `loc_id`, `sdate`, `vac_id`, `quantity`) VALUES ('126', '5', '2021-08-01', '4', '200');
 
 
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10001', '1', '1005', '1', '1', '2021-02-28');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10001', '2', '1002', '2', '2', '2021-04-01');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10002', '1', '1003', '4', '2', '2021-03-20');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10003', '1', '1006', '2', '2', '2021-04-03');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10004', '1', '1006', '3', '2', '2021-01-19');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10004', '2', '1006', '4', '2', '2021-04-05');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10006', '1', '1004', '1', '3', '2021-03-18');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10008', '1', '1004', '2', '3', '2021-05-01');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10008', '2', '1007', '1', '3', '2021-07-30');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10009', '1', '1008', '2', '4', '2021-03-28');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10010', '1', '1009', '1', '5', '2021-02-05');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10010', '2', '1009', '1', '5', '2021-05-06');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10014', '1', '1004', '2', '4', '2021-03-12');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10018', '1', '1006', '1', '2', '2021-05-20');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10017', '1', '1002', '2', '2', '2021-03-23');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10016', '1', '1003', '1', '2', '2021-04-22');
+INSERT INTO `hjc353_1`.`vaccination` (`p_id`, `dose_num`, `emp_id`, `vac_id`, `loc_id`, `vdate`) VALUES ('10016', '2', '1002', '2', '2', '2021-07-29');
+
+
+
+
 INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('101', '1', '2', '2021-02-10', '2', '100');
 INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('102', '2', '3', '2021-03-01', '2', '100');
 INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('103', '3', '4', '2021-04-01', '2', '100');
 INSERT INTO `hjc353_1`.`transfer` (`trans_id`, `from_loc`, `to_loc`, `tdate`, `vac_id`, `quantity`) VALUES ('104', '4', '1', '2021-05-01', '2', '100');
-
-
-DROP TRIGGER IF EXISTS `hjc353_1`.`shipment_BEFORE_INSERT`;
-
-DELIMITER $$
-USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`shipment_BEFORE_INSERT` BEFORE INSERT ON `shipment` FOR EACH ROW
-BEGIN
-	
-	update inventory set inventory.quantity = inventory.quantity + new.quantity where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
-        
-
-END$$
-DELIMITER ;
-
-
-
-DROP TRIGGER IF EXISTS `hjc353_1`.`shipment_AFTER_DELETE`;
-
-DELIMITER $$
-USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`shipment_AFTER_DELETE` AFTER DELETE ON `shipment` FOR EACH ROW
-BEGIN
-
-update inventory set inventory.quantity = inventory.quantity - old.quantity where (old.loc_id = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
-
-END$$
-DELIMITER ;
-
-
-
-
-
-
-DROP TRIGGER IF EXISTS `hjc353_1`.`transfer_BEFORE_INSERT`;
-
-DELIMITER $$
-USE `hjc353_1`$$
-CREATE DEFINER=`hjc353_1`@`132.205.%.%` TRIGGER `transfer_BEFORE_INSERT` BEFORE INSERT ON `transfer` FOR EACH ROW 
-BEGIN
-	
-	IF EXISTS(SELECT i.quantity FROM inventory i WHERE i.loc_id = new.from_loc AND i.vac_id = new.vac_id AND i.quantity > new.quantity)THEN
-    
-	
-	update inventory set inventory.quantity = inventory.quantity + new.quantity where (new.to_loc = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
-	update inventory set inventory.quantity = inventory.quantity - new.quantity where (new.from_loc = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
-    
-    else
-    set new.trans_id = NULL;
-    set new.from_loc = NULL;
-    set new.to_loc = NULL;
-    set new.tdate = NULL;
-    set new.vac_id = NULL;
-    set new.quantity= NULL;
-
-    end if;
-	
-END$$
-DELIMITER ;
-
-
-
-
-DROP TRIGGER IF EXISTS `hjc353_1`.`transfer_AFTER_DELETE`;
-
-DELIMITER $$
-USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`transfer_AFTER_DELETE` AFTER DELETE ON `transfer` FOR EACH ROW
-BEGIN
-	update inventory set inventory.quantity = inventory.quantity - old.quantity where (old.to_loc = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
-	update inventory set inventory.quantity = inventory.quantity + old.quantity where (old.from_loc = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
-END$$
-DELIMITER ;
-
-
-
-
-
-
-DROP TRIGGER IF EXISTS `hjc353_1`.`vaccination_BEFORE_INSERT`;
-
-DELIMITER $$
-USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`vaccination_BEFORE_INSERT` BEFORE INSERT ON `vaccination` FOR EACH ROW
-BEGIN
-
-	if exists(SELECT ag.grp_id 
-			FROM pv_age pv, facility f, person p, age_group ag
-			WHERE  new.loc_id = f.loc_id  AND pv.province = f.province AND p.p_id = new.p_id 
-				AND (TRUNCATE(DATEDIFF(CURDATE(), p.dob) / 365, 0) BETWEEN ag.lower_limit AND ag.upper_limit) AND ag.grp_id > pv.grp_id)then
-		set new.p_id = NULL;
-		set new.dose_num = NULL;
-		set new.emp_id = NULL;
-		set new.vac_id = NULL;
-		set new.loc_id = NULL;
-		set new.vdate = NULL;
-	else
-		update inventory set inventory.quantity = inventory.quantity - 1 where (new.loc_id = inventory.loc_id) AND (new.vac_id = inventory.vac_id);
-	end if;
-
-END$$
-DELIMITER ;
-
-
-
-
-DROP TRIGGER IF EXISTS `hjc353_1`.`vaccination_AFTER_DELETE`;
-
-DELIMITER $$
-USE `hjc353_1`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `hjc353_1`.`vaccination_AFTER_DELETE` AFTER DELETE ON `vaccination` FOR EACH ROW
-BEGIN
-
-update inventory set inventory.quantity = inventory.quantity + 1 where (old.loc_id = inventory.loc_id) AND (old.vac_id = inventory.vac_id);
-
-END$$
-DELIMITER ;
-
 
 
